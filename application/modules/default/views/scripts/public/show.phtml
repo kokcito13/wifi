@@ -1,24 +1,97 @@
 <? $this->headScript()->captureStart() ?>
 <? $this->headScript()->captureEnd() ?>
+<style>
+    .posts-block h1 {
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 22px;
+        margin: 0 0 8px;
+    }
+    blockquote p {
+        background-color: #e3e3e3;
+        border: #e3e3e3 1px solid;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5%;
+    }
+</style>
 <div id="main">
     <article id="content">
         <section class="posts-block">
-            <ul class="posts">
-                <li>
-                    <h3><?php echo $this->contentPage['contentName']->getFieldText();?></h3>
-                    <div class="text-box">
-                        <?php echo $this->contentPage['content']->getFieldText();?>
-                        <br/>
-                        <ul class="terms">
-                            <li><time datetime="<?php echo date('Y-m-d', $this->product->getPageEditDate());?>"><?php echo Application_Model_Kernel_Date_Manager::formatDate($this->product->getPageEditDate(), Application_Model_Kernel_Date_Manager::TYPE_USER_VIEW)?></time></li>
-                            <li><?php echo $this->categoryText;?></li>
-                        </ul>
+            <h1><?php echo $this->contentPage['contentName']->getFieldText();?></h1>
+            <div class="text-box"  style="text-align: center; position: relative; height: 15px">
+                <div style="position: absolute; top: 0px; left:0px;">
+                    <ul class="terms">
+                        <li>
+                            <a href="/">Wi-fi роутеры</a>
+                        </li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                <div style="position: absolute; top: 0px; right:0px;">
+                    <a href="#disqus_thread">отзывы</a>
+                </div>
+            </div>
+            <div class="text-box"  style="text-align: center;">
+                <img src="<?php echo $this->product->getPhoto1()->getPath('529:396')?>" alt="" width="529" height="396" />
+            </div>
+            <div class="text-box">
+                <?php
+                $arrAdvert = array ();
+                // 1 - номер после какого абзаца и <<<EOD1 ... EOD1; - содержимое что будет выводится
+                $arrAdvert[2] = '
+                    <div style="text-align: center;">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- wifi в статье -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:580px;height:400px"
+                             data-ad-client="ca-pub-3861532892125732"
+                             data-ad-slot="4302163290"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
-                </li>
-            </ul>
+                    ';
+                $arrAdvert['last'] = '
+                    <div style="text-align: center;">
+                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- wifi в конце статьи -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:580px;height:400px"
+                                 data-ad-client="ca-pub-3861532892125732"
+                                 data-ad-slot="5778896497"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    ';
+
+                $contentPost = $this->contentPage['content']->getFieldText();
+                if (substr_count($contentPost, '<p') > 2) {
+                    $contents = explode("</p>", $contentPost);
+                    foreach ($contents as $k => $content) {
+                        echo $content;
+                        if (isset($arrAdvert[$k + 1]))
+                            echo $arrAdvert[$k + 1];
+                        if (isset($arrAdvert['prelast'])) {
+                            if ((count($contents) - 3) == $k) {
+                                echo $arrAdvert['prelast'];
+                            }
+                        }
+                        if (isset($arrAdvert['last'])) {
+                            if (count($contents) == ($k + 1)) {
+                                echo $arrAdvert['last'];
+                            }
+                        }
+                        echo "";
+                    }
+                } else {
+                    echo $contentPost;
+                } ?>
+            </div>
         </section>
         <section style="margin-top: -70px;">
-            <?php // echo $this->ShowComments( $this->product->getIdProduct(), Application_Model_Kernel_Comment::TYPE_PUBLIC );?>
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -32,7 +105,6 @@
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
         <section class="stories-container" style="margin-top: 10px;">
             <h3 class="top-title">
