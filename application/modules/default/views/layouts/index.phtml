@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title><?php echo $this->title ?></title>
+        <meta name="keywords" content="<?= $this->keywords ?>" /> 
+        <meta name="description" content="<?= $this->description ?>" />
+        <?php echo $this->headMeta() ?>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="google-site-verification" content="_ZougryiBOI1qTeThy2b4DaJjxwfSfxufiKMZ3CR0YE" />
+
+        <?php if( isset ($this->headCanonical) ) echo $this->headCanonical; ?>
+	        
+        <link media="all" rel="stylesheet" href="/static/default/css/all.css">
+        <script type="text/javascript" src="/static/default/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="/static/default/js/main.js"></script>
+
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" type="text/css" href="/static/default/css/ie.css" media="screen"/>
+        <![endif]-->
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700italic,700' rel='stylesheet' type='text/css'>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-11535685-10']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+        <?php echo $this->headScript() ?>
+    </head>
+    <body>
+        <div class="page">
+            <?php echo $this->partial('blocks/menu.phtml', array('menu' => $this->menu, 'blocks'=>$this->blocks,'siteSetings'=>$this->siteSetings)) ?>
+            <div id="wrapper">
+                <div class="wrapper-holder">
+                    <?php echo $this->layout()->content ?>
+                </div>
+            </div>
+            <?php echo $this->partial('blocks/footer.phtml', array('blocks'=>$this->blocks,'siteSetings'=>$this->siteSetings)) ?>
+        </div>
+    </body>
+</html>

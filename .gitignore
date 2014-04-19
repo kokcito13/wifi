@@ -7,8 +7,8 @@ extras/documentation
 library/*
 library
 application/configs/application.ini
-www/static/default/upload/images/*
-www/tmp/adminka_images/*
+wifi-hardware.com/static/default/upload/images/*
+wifi-hardware.com/tmp/adminka_images/*
 
 .idea/*
 .idea

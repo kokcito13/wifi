@@ -1,0 +1,25 @@
+<header id="header">
+    <div class="holder">
+        <div class="frame">
+            <div class="frame2">
+                <div class="frame3">
+                    <ul id="nav">
+                        <li <?php if(isset($this->menu)&&$this->menu=='main'):?>class="active"<?php endif;?>>
+                            <a href="/"><span>Главная</span></a>
+                        </li>
+                        <li <?php if(isset($this->menu)&&$this->menu=='public'):?>class="active"<?php endif;?>>
+                            <a href="<?php echo $this->url(array('sort'=>0,'pageNum'=>0,'idCategory'=>0),'public-page-16')?>"><span>Публикации</span></a>
+                        </li>
+<!--                        <li>-->
+<!--                            <a href="--><?php //echo $this->url(array(),'public-page-4')?><!--"><span>Гостевая</span></a>-->
+<!--                        </li>-->
+                    </ul>
+                    <h1 class="logo" style="background-image: url(<?php echo $this->siteSetings->getPhoto1()->getPath('195:27')?>)">
+                        <a href="/"><?php echo strip_tags($this->blocks['name_first']['contentName']->getFieldText())?></a>
+                    </h1>
+                    <a href="#" class="flash-link"><?php echo strip_tags($this->blocks['my_blog']['contentName']->getFieldText())?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
