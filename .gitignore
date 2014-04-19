@@ -9,6 +9,7 @@ library
 application/configs/application.ini
 wifi-hardware.com/static/default/upload/images/*
 wifi-hardware.com/tmp/adminka_images/*
+wifi-hardware.com/imagecache/*
 
 .idea/*
 .idea

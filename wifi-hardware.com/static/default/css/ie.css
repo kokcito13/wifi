@@ -1,0 +1,11 @@
+.visual-boxes {background:#f2f2f2;}
+.three-columns figcaption,
+.gallery-container2 .gallery .caption,
+.two-columns .visual-block figcaption,
+.stories .visual figcaption{background:#2c2c2c;}
+.gallery-container2 .caption{
+	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
+}
+.visual-boxes .hover-image span{
+	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)';
+}

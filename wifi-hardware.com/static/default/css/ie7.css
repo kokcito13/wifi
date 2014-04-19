@@ -1,0 +1,8 @@
+body > nav table td.sep {background: #a9bf47;}
+
+article.post-preview > footer time,
+article.post-preview > footer p.tags,
+article.post > footer time,
+article.post > footer p.tags,
+article.comment > footer time,
+article.comment > footer a {display: inline !important; zoom: 1;}
