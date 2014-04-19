@@ -1,84 +1,74 @@
 <footer id="footer">
-    <strong><a href="http://wifi-hardware.com"><?php echo strip_tags($this->blocks['name_first']['contentName']->getFieldText())?></a></strong>
+    <!--noindex-->
     <ul class="add-nav">
         <li>
-            <a href="/">Главная</a>
+            <a href="/" rel="nofollow">Главная</a>
         </li>
         <li>
-            <a href="<?php echo $this->url(array('sort'=>0,'pageNum'=>0,'idCategory'=>0),'public-page-16')?>">Публикации</a>
+            <a rel="nofollow" href="<?php echo $this->url(array ('sort' => 0, 'idCategory' => 0), 'public-page-16') ?>">Публикации</a>
         </li>
         <li>
-            <a href="<?php echo $this->url(array(),'public-page-4')?>">Гостевая</a>
+            <a rel="nofollow" href="<?php echo $this->url(array (), 'public-page-4') ?>">Гостевая</a>
         </li>
         <li>
             <!--LiveInternet counter-->
             <script type="text/javascript">
                 <!--
-                document.write("<a href='http://www.liveinternet.ru/click' "+
-                        "target=_blank><img src='//counter.yadro.ru/hit?t14.6;r"+
-                        escape(document.referrer)+((typeof(screen)=="undefined")?"":
-                        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-                                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-                        ";"+Math.random()+
-                        "' alt='' title='LiveInternet: показано число просмотров за 24"+
-                        " часа, посетителей за 24 часа и за сегодня' "+
-                        "border='0' width='88' height='31'><\/a>")
+                document.write("<a href='http://www.liveinternet.ru/click' " +
+                    "target=_blank><img src='//counter.yadro.ru/hit?t14.6;r" +
+                    escape(document.referrer) + ((typeof(screen) == "undefined") ? "" :
+                    ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                        screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+                    ";" + Math.random() +
+                    "' alt='' title='LiveInternet: показано число просмотров за 24" +
+                    " часа, посетителей за 24 часа и за сегодня' " +
+                    "border='0' width='88' height='31'><\/a>")
                 //-->
             </script>
             <!--/LiveInternet-->
         </li>
-	<li>
-		<a target="_blank" href="//plus.google.com/118393108679325493018/about" rel="publisher" style="text-decoration:none;">
-<img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/></a>
-	</li>
+        <li>
+            <a target="_blank" href="//plus.google.com/118393108679325493018/about" rel="publisher"
+               style="text-decoration:none;">
+                <img src="//ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+"
+                     style="border:0;width:32px;height:32px;"/></a>
+        </li>
     </ul>
+    <!--/noindex-->
 </footer>
 <div class="scroll-holder">
+    <!--noindex-->
     <div class="scroll-frame">
-        <a href="#header" class="scroll-btn">UP</a>
+        <a rel="nofollow" href="#header" class="scroll-btn">UP</a>
     </div>
+    <!--/noindex-->
 </div>
-
-<!---->
-<!--<footer>-->
-<!--    <div class="cr">--><?php //echo $this->blocks['footer']['contentName']->getFieldText(); ?><!--</div>-->
-<!--    <br/>-->
-<!--    <!--LiveInternet counter-->-->
-<!--    <script type="text/javascript">-->
-<!--        <!---->
-<!--        document.write("<a href='http://www.liveinternet.ru/click' "+-->
-<!--            "target=_blank><img src='//counter.yadro.ru/hit?t14.6;r"+-->
-<!--            escape(document.referrer)+((typeof(screen)=="undefined")?"":-->
-<!--            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?-->
-<!--            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+-->
-<!--            ";"+Math.random()+-->
-<!--            "' alt='' title='LiveInternet: показано число просмотров за 24"+-->
-<!--            " часа, посетителей за 24 часа и за сегодня' "+-->
-<!--            "border='0' width='88' height='31'><\/a>")-->
-<!--        //-->-->
-<!--    </script>-->
-<!--    <!--/LiveInternet-->-->
-<!--</footer>-->
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
+        (w[c] = w[c] || []).push(function () {
             try {
-                w.yaCounter15850285 = new Ya.Metrika({id:15850285, enableAll: true, webvisor:true});
-            } catch(e) {}
+                w.yaCounter15850285 = new Ya.Metrika({id: 15850285, enableAll: true, webvisor: true});
+            } catch (e) {
+            }
         });
-        
+
         var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
         s.type = "text/javascript";
         s.async = true;
         s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-        
+
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f);
-        } else { f(); }
+        } else {
+            f();
+        }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="//mc.yandex.ru/watch/15850285" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/15850285" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->

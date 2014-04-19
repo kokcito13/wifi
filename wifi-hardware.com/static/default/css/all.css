@@ -42,7 +42,8 @@ q:before,
 q:after{content:"";}
 input[type=text], input[type=password], input[type=file], input[type=submit], textarea{-webkit-appearance:none;}
 .page{
-	width:100%;	overflow:hidden;
+	width:100%;
+	overflow:hidden;
 	position:relative;
 }
 #header{
@@ -70,6 +71,7 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 -30px;
 }
 #header .frame3{
+    position: relative;
 	width:100%;
 	padding:0 30px;
 	margin:0 -30px;
@@ -78,7 +80,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	-moz-box-shadow:0 2px 3px #efefef;
 }
 #header .frame3:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 #wrapper{
 	width:980px;
@@ -100,7 +104,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 #nav{
 	min-width:400px;
 	float:left;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 #nav li{
 	float:left;
@@ -127,7 +133,12 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 #nav a:hover span,
 #nav li.active span{background:url(../images/arrow.gif) no-repeat 50% 0;}
 .logo{
-	float:left;	width:195px;	height:27px;	background:url(../images/logo.png) no-repeat;	text-indent:-9999px;	overflow:hidden;
+	float:left;
+	width:195px;
+	height:27px;
+	background:url(../images/logo.png) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
 	margin:12px 9px 0;
 }
 .logo a{
@@ -136,7 +147,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .flash-link{
 	float:right;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	width:40px;
 	height:33px;
 	background:url(../images/sprite-icons.png) no-repeat -44px 0;
@@ -149,7 +161,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 0 19px -11px;
 }
 .top-container:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .top-visuals{
 	float:right;
@@ -162,7 +176,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .sections-nav{
 	width:560px;
 	overflow:hidden;
-	margin:1px -10px 12px 0;	padding:0;	list-style:none;
+	margin:1px -10px 12px 0;
+	padding:0;
+	list-style:none;
 }
 .sections-nav li{
 	float:left;
@@ -202,14 +218,17 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 0 14px;
 }
 .main-visual .mask{
-	width:100%;	overflow:hidden;
+	width:100%;
+	overflow:hidden;
 }
 .main-gallery{
 	width:100%;
 	height:396px;
 	position:relative;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .main-gallery li{
 	width:529px;
@@ -237,7 +256,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .thumbnails .pagination{
 	width:9999px;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .thumbnails .pagination li{
 	float:left;
@@ -261,7 +282,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .main-visual .next{
 	width:33px;
 	height:35px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	position:absolute;
 	background:url(../images/sprite-icons.png) no-repeat -89px 0;
 	bottom:14px;
@@ -284,7 +306,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	width:541px;
 	height:18px;
 	background:url(../images/bg-shadow.png) no-repeat 50% 0;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 }
 .main-info .text-block{
 	font-size:11px;
@@ -325,7 +348,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .blockquote .row{overflow:hidden;}
 .terms{
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .terms li{
 	float:left;
@@ -349,11 +374,14 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .social-links{
 	overflow:hidden;
-	margin:0 0 13px;	padding:0;	list-style:none;
+	margin:0 0 13px;
+	padding:0;
+	list-style:none;
 }
 .social-links li{
 	float:left;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	width:30px;
 	height:25px;
 	background:url(../images/sprite-icons.png) no-repeat;
@@ -387,7 +415,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	padding:0 0 12px;
 }
 .top-title:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .related-block .top-title{padding:0 0 11px;}
 .top-title span{
@@ -403,7 +433,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .video-gallery{
 	width:9999px;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .video-gallery li{
 	float:left;
@@ -437,7 +469,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	left:0;
 	width:100%;
 	height:100%;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	background:url(../images/bg-play-btn.png) no-repeat 3px 64px;
 }
 .video-gallery .play-btn:hover{background:url(../images/bg-play-btn-hov.png) no-repeat 3px 64px;}
@@ -455,7 +488,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 4px 0 0;
 	width:20px;
 	height:20px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	background:url(../images/sprite-icons.png) no-repeat -0 -135px;
 }
 .gallery-row .next{background-position:-24px -135px}
@@ -518,7 +552,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .news-column .heading{
 	background:#ffa600 url(../images/bg-heading.gif) repeat-x;
 	color:#fff;
-	width:100%;	overflow:hidden;
+	width:100%;
+	overflow:hidden;
 	text-align:center;
 	padding:2px 10px 1px;
 	margin:-1px -10px 15px;
@@ -556,7 +591,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	bottom:-9px;
 	left:0;
 	background:url(../images/bg-shadow2.png) no-repeat 50% 0;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 }
 .profile-box .text{
 	overflow:hidden;
@@ -575,13 +611,16 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .profile-box .tools{
 	overflow:hidden;
-	margin:0 0 0 -3px;	padding:9px 0 0;	list-style:none;
+	margin:0 0 0 -3px;
+	padding:9px 0 0;
+	list-style:none;
 }
 .profile-box .tools li{
 	float:left;
 	height:35px;
 	background:url(../images/sprite-icons.png) no-repeat;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	margin:0 2px 0 0;
 }
 .profile-box .tools a{
@@ -605,8 +644,11 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 4px 0 0;
 }
 .profile-box .tools li.note:hover{background-position:-59px -159px;}
-.ad-list{	overflow:hidden;
-	margin:0;	padding:0 0 24px 6px;	list-style:none;
+.ad-list{
+	overflow:hidden;
+	margin:0;
+	padding:0 0 24px 6px;
+	list-style:none;
 }
 .ad-list li{
 	float:left;
@@ -624,7 +666,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .friends-block .gallery{
 	width:9999px;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .friends-block .gallery li{
 	width:200px;
@@ -650,7 +694,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	width:56px;
 	height:6px;
 	background:url(../images/bg-shadow3.png) no-repeat 50% 0;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 }
 .friends-block .box .text{
 	overflow:hidden;
@@ -669,7 +714,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .friends-block .items{
 	width:auto;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .friends-block .items li{
 	float:left;
@@ -718,7 +765,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .community-block .tabset{
 	display:inline-block;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .community-block .tabset li{
 	float:left;
@@ -741,8 +790,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .community-block .tabset a:hover{color:#212121;}
 .gallery-container{
 	width:100%;
-	padding:0 0 47px;
-	margin:0 0 58px;
+	padding:0 0 35px;
+	margin:0 0 5px;
 	background:url(../images/bg-shadow4.png) no-repeat 50% 100%;
 }
 .gallery-container .top-title{margin:0 0 18px;}
@@ -757,7 +806,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .gallery2 ul{
 	width:9999px;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .gallery2 ul li{
 	float:left;
@@ -798,7 +849,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	top:-24px;
 	width:37px;
 	height:221px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	background:url(../images/sprite-icons.png) no-repeat 0 -200px;
 }
 .gallery2 .prev{left:0;}
@@ -815,7 +867,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 0 39px;
 }
 #main:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 #content{
 	float:left;
@@ -827,7 +881,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .posts{
 	width:768px;
-	margin:0 0 0-10px;	padding:0 0 14px;	list-style:none;
+	margin:0 0 0-10px;
+	padding:0 0 14px;
+	list-style:none;
 	color:#555;
 }
 .posts li{
@@ -836,12 +892,14 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	padding:9px 10px 14px;
-	margin:0 0 21px;
+	padding:9px 10px 0px;
+	margin:0 0 0px;
 }
 .posts li:nth-child(2n+2){background:#fff;}
 .posts li:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .posts .visual{
 	float:left;
@@ -893,7 +951,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .buttons-row{overflow:hidden;}
 .buttons-row .buttons{
 	float:right;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .buttons-row .buttons li{
 	float:left;
@@ -937,7 +997,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .weather-form{width:100%;}
 .search-form:after,
 .weather-form:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .search-form .txt,
 .weather-form .txt{
@@ -963,7 +1025,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	width:29px;
 	height:25px;
 	background:url(../images/sprite-icons.png) no-repeat -151px -333px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	line-height:0;
 	border:none;
 	padding:0;
@@ -1008,7 +1071,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .market-block .tabset{
 	float:right;
-	margin:0 0 13px;	padding:0;	list-style:none;
+	margin:0 0 13px;
+	padding:0;
+	list-style:none;
 }
 .market-block .tabset li{
 	float:left;
@@ -1087,7 +1152,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .visual-boxes img{vertical-align:top;}
 .visual-boxes:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .visual-boxes .col{
 	float:left;
@@ -1096,7 +1163,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .visual-boxes .block{width:100%;}
 .visual-boxes .block:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .visual-boxes .box{
 	float:left;
@@ -1125,7 +1194,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	width:200px;
 	height:99px;
 	background:url(../images/txt-image-galleries.png) no-repeat;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	margin:7px 0 6px;
 }
 .visual-boxes .text-box .row{
@@ -1153,7 +1223,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	color:#5a5a5a;
 }
 .three-columns:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .three-columns .col{
 	float:left;
@@ -1237,7 +1309,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .gallery-container2 .gallery{
 	width:9999px;
 	overflow:hidden;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 .gallery-container2 .gallery li{
 	width:941px;
@@ -1271,7 +1345,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	width:213px;
 	height:30px;
 	background:url(../images/txt-photo-of-the-day.png) no-repeat;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 
 }
 .gallery-container2 .caption{
@@ -1331,7 +1406,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 .gallery-container2 .next{
 	width:49px;
 	height:49px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	position:absolute;
 	background:url(../images/sprite-icons.png) no-repeat -87px -256px;
 	top:217px;
@@ -1360,7 +1436,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	padding:0 0 51px;
 }
 .two-columns .visual-block:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .two-columns .visual-block p{margin:0;}
 .two-columns .visual-block figure{
@@ -1417,7 +1495,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	color:#292929;
 }
 .three-col:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .three-col .column{
 	position:relative;
@@ -1427,7 +1507,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .three-col .column:first-child{padding-left:3px;}
 .three-col .visual{
-	width:100%;	overflow:hidden;
+	width:100%;
+	overflow:hidden;
 	border-radius: 0 0 2px 2px;
 	-moz-border-radius: 0 0 2px 2px;
 	-webkit-border-radius: 0 0 2px 2px;
@@ -1460,7 +1541,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	margin:0 0 29px;
 }
 .info-block:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .info-block .visual{
 	float:right;
@@ -1522,7 +1605,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	background:url(../images/bg-dotted2.gif) repeat-x 0 100%;
 }
 .stories-container:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 .stories-container .top-title{padding:0 0 18px;}
 .stories{
@@ -1575,7 +1660,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 .stories .visual:hover a{color:#ffb80c;}
 .stories .info-box{
-	width:100%;	overflow:hidden;
+	width:100%;
+	overflow:hidden;
 }
 .stories .visual-box{
 	float:left;
@@ -1642,7 +1728,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	padding:7px 0 50px;
 }
 #footer:after{
-	clear:both;	display:block;	content:"";
+	clear:both;
+	display:block;
+	content:"";
 }
 #footer .logo{
 	width:145px;
@@ -1652,7 +1740,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 }
 #footer .add-nav{
 	float:right;
-	margin:0;	padding:0;	list-style:none;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 #footer .add-nav li{
 	float:left;
@@ -1668,7 +1758,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	float:right;
 	width:36px;
 	height:31px;
-	text-indent:-9999px;	overflow:hidden;
+	text-indent:-9999px;
+	overflow:hidden;
 	background:url(../images/sprite-icons.png) no-repeat -144px -204px;
 	margin-right:;
 }
@@ -1681,6 +1772,7 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	bottom:138px;
 }
 .scroll-frame{
+    position: absolute;
 	max-width:1232px;
 	margin:0 auto;
 	overflow:hidden;

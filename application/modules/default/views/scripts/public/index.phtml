@@ -4,24 +4,41 @@
     <article id="content">
         <section class="posts-block">
             <ul class="posts">
-
-                <?php foreach($this->publicList->data as $public): ?>
+                <?php foreach($this->publicList->data as $k=>$public): ?>
                     <?php $publicContent = $public->getContent()->getFields();
                     $publicContentText = strip_tags($publicContent['content']->getFieldText()); ?>
                     <li>
+                        <!--noindex-->
                         <div class="visual">
-                            <a href="<?php echo $public->getRoute()->getUrl();?>">
+                            <a href="<?php echo $public->getRoute()->getUrl();?>" rel="nofollow">
                                 <img src="<?php echo $public->getPhoto1()->getPath('180:125')?>" alt="<?php echo $publicContent['contentName']->getFieldText();?>" width="180" height="125" />
                             </a>
                         </div>
+                        <!--/noindex-->
                         <div class="text-box">
                             <h3><a href="<?php echo $public->getRoute()->getUrl();?>"><?php echo $publicContent['contentName']->getFieldText();?></a></h3>
-                            <ul class="terms">
-                                <li><?php echo $public->getCategoryTextByProduct($this->category);?></li>
-                            </ul>
-                            <p><?php echo mb_substr($publicContentText, 0, 250, 'utf8'); ?>...<a href="<?php echo $public->getRoute()->getUrl();?>" class="more">Читать &raquo;</a></p>
+                            <!--noindex-->
+                            <p><?php echo trim(mb_substr($publicContentText, 0, 250, 'utf8')); ?>...<br/>
+                                <a href="<?php echo $public->getRoute()->getUrl();?>" rel="nofollow" class="more">Читать &raquo;</a>
+                            </p>
+                            <!--/noindex-->
                         </div>
                     </li>
+                    <? if ($k == 1 || $k == 4): ?>
+                        <li>
+                            <div class="text-box" style="text-align: center;">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- wifi категории -->
+                                <ins class="adsbygoogle"
+                                     style="display:inline-block;width:580px;height:400px"
+                                     data-ad-client="ca-pub-3861532892125732"
+                                     data-ad-slot="3266082092"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </li>
+                    <? endif; ?>
                 <?php endforeach; ?>
             </ul>
             <?php echo $this->paginationControl($this->publicList->paginator, 'Sliding', 'block/paginator.phtml')?>
@@ -30,10 +47,9 @@
     </article>
     <aside id="sidebar">
         <?php echo $this->ShowCategorys();?>
-        <?php echo $this->ShowRecomend();?>
         <br/>
         <div class="block">
-            <h3 class="top-title"><span>И ЕЩЕ</span></h3>
+            <h3 class="top-title"></h3>
             <div class="ad">
                 <div class="box">
                     <script type="text/javascript"><!--

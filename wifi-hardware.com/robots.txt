@@ -1,0 +1,26 @@
+User-agent: Yandex
+Crawl-delay: 10
+Disallow: */page/*
+Allow: /static/default
+Host: wifi-hardware.com
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Googlebot
+Disallow: */page/*
+Allow: /static/default
+
+User-agent: *
+Crawl-delay: 10
+Disallow: */page/*
+Allow: /static/default
+
+User-agent: Googlebot-Image
+Allow: /static/default/
+
+User-agent: YandexImages
+Allow: /static/default/
+
+User-agent: Slurp
+Disallow: /

@@ -1,58 +1,68 @@
 <?php
 
-class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
+class Application_Model_Kernel_Product extends Application_Model_Kernel_Page
+{
 
     private $idProduct;
     private $productCategory;
     private $idPhoto1;
     private $photo1 = null;
-    
-    private $categoryList = array();
+
+    private $categoryList = array ();
     private $categoryText = '';
-    
-    const ITEM_ON_PAGE = 8;
+
+    const ITEM_ON_PAGE = 10;
 
     /**
      * @var Application_Model_Kernel_Gallery
      */
-    public function __construct($idProduct, $idPhoto1, $idPage, $idRoute, $idContentPack, $pageEditDate, $pageStatus, $position) {
+    public function __construct($idProduct, $idPhoto1, $idPage, $idRoute, $idContentPack, $pageEditDate, $pageStatus, $position)
+    {
         parent::__construct($idPage, $idRoute, $idContentPack, $pageEditDate, $pageStatus, self::TYPE_PROJECT, $position);
         $this->idProduct = $idProduct;
-        $this->idPhoto1 = $idPhoto1;
+        $this->idPhoto1  = $idPhoto1;
     }
 
-    public function getIdProduct() {
+    public function getIdProduct()
+    {
         return $this->idProduct;
     }
 
-    public function getIdPhoto1() {
+    public function getIdPhoto1()
+    {
         return $this->idPhoto1;
     }
 
-    public function getPhoto1() {
+    public function getPhoto1()
+    {
         if (is_null($this->photo1))
             $this->photo1 = Application_Model_Kernel_Photo::getById($this->idPhoto1);
+
         return $this->photo1;
     }
 
-    public function setPhoto1(Application_Model_Kernel_Photo &$photo1) {
+    public function setPhoto1(Application_Model_Kernel_Photo &$photo1)
+    {
         $this->photo1 = $photo1;
+
         return $this;
     }
 
-    public function setIdPhoto1($idPhoto1) {
+    public function setIdPhoto1($idPhoto1)
+    {
         $this->idPhoto1 = $idPhoto1;
     }
 
-    public function save() {
+    public function save()
+    {
         $db = Zend_Registry::get('db');
         $db->beginTransaction();
         try {
             $db->beginTransaction();
             $insert = is_null($this->_idPage);
             $this->savePageData(); //сохраняем даные страницы
-            $data = array(
-                'idPage' => $this->getIdPage(),
+            $data = array (
+                'idPage'   => $this->getIdPage(),
                 'idPhoto1' => $this->idPhoto1
             );
             if ($insert) {
@@ -70,17 +80,19 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
         }
     }
 
-    private function clearCache() {
+    private function clearCache()
+    {
         if (!is_null($this->getidProject())) {
             $cachemanager = Zend_Registry::get('cachemanager');
-            $cache = $cachemanager->getCache('product');
+            $cache        = $cachemanager->getCache('product');
             if (!is_null($cache)) {
                 $cache->remove($this->getidProduct());
             }
         }
     }
 
-    public function validate($data = false) {
+    public function validate($data = false)
+    {
         $e = new Application_Model_Kernel_Exception();
         $this->getRoute()->validate($e);
         $this->validatePageData($e);
@@ -96,30 +108,34 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
             }
         }
 
-        if ((bool) $e->current())
+        if ((bool)$e->current())
             throw $e;
     }
 
-    private static function getSelf(stdClass &$data) {
+    private static function getSelf(stdClass &$data)
+    {
         return new self($data->idProduct, $data->idPhoto1,
                         $data->idPage, $data->idRoute, $data->idContentPack,
                         $data->pageEditDate, $data->pageStatus, $data->position);
     }
 
-    public static function loadCache($id) {
+    public static function loadCache($id)
+    {
         $cachemanager = Zend_Registry::get('cachemanager');
-        $cache = $cachemanager->getCache('project');
+        $cache        = $cachemanager->getCache('project');
+
         return $cache->load($id);
     }
 
-    public static function getById($idProduct) {
-        $idProduct = (int) $idProduct;
+    public static function getById($idProduct)
+    {
+        $idProduct = (int)$idProduct;
 //		$cachemanager = Zend_Registry::get('cachemanager');
 //		$cache = $cachemanager->getCache('department');
 //		if (($project = $cache->load($idProject)) !== false) {
 //			return $project;
 //		} else {
-        $db = Zend_Registry::get('db');
+        $db     = Zend_Registry::get('db');
         $select = $db->select()->from('products');
         $select->join('pages', 'products.idPage = pages.idPage');
         $select->where('idProduct = ?', $idProduct);
@@ -133,10 +149,11 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
 //		}
     }
 
-    public static function getByIdPage($idPage) {
+    public static function getByIdPage($idPage)
+    {
         $idPage = intval($idPage);
 
-        $db = Zend_Registry::get('db');
+        $db     = Zend_Registry::get('db');
         $select = $db->select()->from('products');
         $select->join('pages', 'products.idPage = pages.idPage');
         $select->where('pages.idPage = ?', $idPage);
@@ -148,9 +165,10 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
         }
     }
 
-    public function completelyCache() {
+    public function completelyCache()
+    {
         $cachemanager = Zend_Registry::get('cachemanager');
-        $cache = $cachemanager->getCache('product');
+        $cache        = $cachemanager->getCache('product');
         $cache->load($this->getIdPage());
         $this->getidPhoto1();
         $this->getIdGallery2();
@@ -159,16 +177,17 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
         $cache->save($this);
     }
 
-    public static function getList($order, $orderType, $content, $route, $searchName, $status, $page, $onPage, $limit, $group = true, $wher = false, $area = false, $nextorder = false) {
+    public static function getList($order, $orderType, $content, $route, $searchName, $status, $page, $onPage, $limit, $group = true, $wher = false, $area = false, $nextorder = false)
+    {
         $return = new stdClass();
-        $db = Zend_Registry::get('db');
+        $db     = Zend_Registry::get('db');
         $select = $db->select()->from('products');
         $select->join('pages', 'pages.idPage = products.idPage');
         $select->join('categorie_product', 'products.idProduct = categorie_product.idProduct');
-        $select->joinLeft('comments', '( products.idProduct = comments.idOwner AND comments.commentType = 1 )', array('countComm' => 'COUNT(comments.idOwner)'));
-        
+        $select->joinLeft('comments', '( products.idProduct = comments.idOwner AND comments.commentType = 1 )', array ('countComm' => 'COUNT(comments.idOwner)'));
+
         //ORDER BY countComm DESC
-        
+
         if ($route) {
             $select->join('routing', 'pages.idRoute = routing.idRoute');
         }
@@ -212,14 +231,14 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
         } else {
             $return->paginator = $db->fetchAll($select);
         }
-        $return->data = array();
-        $i = 0;
+        $return->data = array ();
+        $i            = 0;
         foreach ($return->paginator as $projectData) {
             $return->data[$i] = self::getSelf($projectData);
             if ($route) {
-                $url = new Application_Model_Kernel_Routing_Url($projectData->url);
+                $url           = new Application_Model_Kernel_Routing_Url($projectData->url);
                 $defaultParams = new Application_Model_Kernel_Routing_DefaultParams($projectData->defaultParams);
-                $route = new Application_Model_Kernel_Routing($projectData->idRoute, $projectData->type, $projectData->name, $projectData->module, $projectData->controller, $projectData->action, $url, $defaultParams, $projectData->routeStatus);
+                $route         = new Application_Model_Kernel_Routing($projectData->idRoute, $projectData->type, $projectData->name, $projectData->module, $projectData->controller, $projectData->action, $url, $defaultParams, $projectData->routeStatus);
                 $return->data[$i]->setRoute($route);
             }
             if ($content) {
@@ -229,52 +248,58 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
             }
             $i++;
         }
+
         return $return;
     }
 
-    public function show() {
-        $db = Zend_Registry::get('db');
+    public function show()
+    {
+        $db                = Zend_Registry::get('db');
         $this->_pageStatus = self::STATUS_SHOW;
         $this->savePageData();
 //        $this->clearCache();
     }
 
-    public function hide() {
-        $db = Zend_Registry::get('db');
+    public function hide()
+    {
+        $db                = Zend_Registry::get('db');
         $this->_pageStatus = self::STATUS_HIDE;
         $this->savePageData();
 //        $this->clearCache();
     }
 
-    public function delete() {
+    public function delete()
+    {
         $db = Zend_Registry::get('db');
         $db->delete('products', "products.idPage = {$this->_idPage}");
         $this->deletePage();
     }
 
-    public static function changePosition($idPage, $position) {
+    public static function changePosition($idPage, $position)
+    {
 
         $db = Zend_Registry::get('db');
-        $db->update('products', array("projectPosition" => $position), 'idPage = ' . (int) $idPage);
+        $db->update('products', array ("projectPosition" => $position), 'idPage = ' . (int)$idPage);
 
         return true;
     }
 
-    public function getListCategoryByIdProduct() {
+    public function getListCategoryByIdProduct()
+    {
 
         if (count($this->categoryList) == 0) {
-            $db = Zend_Registry::get('db');
-            $return = array();
+            $db     = Zend_Registry::get('db');
+            $return = array ();
             $select = $db->select()->from('categorie_product');
-            $select->where('categorie_product.idProduct = ' . (int) $this->idProduct);
+            $select->where('categorie_product.idProduct = ' . (int)$this->idProduct);
             $i = 0;
             if (false !== ($result = $db->fetchAll($select))) {
                 foreach ($result as $category) {
-                    $object[$i] = new stdClass();
-                    $object[$i]->id = $category->id;
+                    $object[$i]              = new stdClass();
+                    $object[$i]->id          = $category->id;
                     $object[$i]->idCategorie = $category->idCategorie;
-                    $object[$i]->idProduct = $category->idProduct;
-                    $return[] = $object[$i];
+                    $object[$i]->idProduct   = $category->idProduct;
+                    $return[]                = $object[$i];
                     $i++;
                 }
             }
@@ -282,29 +307,44 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
         } else {
             $return = $this->categoryList;
         }
+
         return $return;
     }
 
-    public function saveCategoryByIdProduct($idCategorys) {
+    public function getFirstCategory()
+    {
+        $arr = $this->getListCategoryByIdProduct();
+
+        if (count($arr)) {
+            return Application_Model_Kernel_Category::getById( $arr[0]->idCategorie );
+        }
+
+        return false;
+    }
+
+    public function saveCategoryByIdProduct($idCategorys)
+    {
 
         $db = Zend_Registry::get('db');
-        $i = 0;
+        $i  = 0;
         foreach ($idCategorys as $key => $value) {
-            $data[$i] = array('idCategorie' => (int) $value, 'idProduct' => (int) $this->idProduct);
+            $data[$i] = array ('idCategorie' => (int)$value, 'idProduct' => (int)$this->idProduct);
             $db->insert('categorie_product', $data[$i]);
             $i++;
         }
         $db->commit();
     }
 
-    public function deleteCatecorys() {
+    public function deleteCatecorys()
+    {
         $db = Zend_Registry::get('db');
         $db->delete('categorie_product', "categorie_product.idProduct = " . $this->idProduct);
     }
 
-    public function getCategoryTextByProduct( $categorys ){
-        if ( mb_strlen($this->categoryText, 'utf8') < 2) {
-            
+    public function getCategoryTextByProduct($categorys)
+    {
+        if (mb_strlen($this->categoryText, 'utf8') < 2) {
+
             $this->categoryText = '';
             foreach ($categorys as $key => $value) {
                 foreach (self::getListCategoryByIdProduct() as $v) {
@@ -316,8 +356,9 @@ class Application_Model_Kernel_Product extends Application_Model_Kernel_Page {
             if (mb_strlen($this->categoryText, 'utf8') > 2)
                 $this->categoryText = mb_substr($this->categoryText, 0, -2);
         }
+
         return $this->categoryText;
     }
-    
+
 }
 

@@ -9,13 +9,17 @@
         margin: 0 0 8px;
     }
     blockquote p {
-        background-color: #e3e3e3;
-        border: #e3e3e3 1px solid;
-        text-align: center;
-        padding: 15px;
-        border-radius: 5%;
+        background: #e3e3e3;
+        border-left: 4px solid #D6D6D6;
+        border-right: 4px solid #D6D6D6;
+        border-radius: 14px;
+        margin-bottom: 24px;
+        padding: 24px;
+        font-style: italic;
     }
 </style>
+<? $categoryMain = $this->product->getFirstCategory();?>
+<? $categoryMainContent = $categoryMain->getContent()->getFields();?>
 <div id="main">
     <article id="content">
         <section class="posts-block">
@@ -26,12 +30,17 @@
                         <li>
                             <a href="/">Wi-fi роутеры</a>
                         </li>
+                        <li>
+                            <a href="<?=$this->url(array('sort'=>0,'pageNum'=>1,'idCategory'=>$categoryMain->getid()),'public-page-16')?>"><?=$categoryMainContent['contentName']->getFieldText();?></a>
+                        </li>
                         <li>...</li>
                     </ul>
                 </div>
+                <!--noindex-->
                 <div style="position: absolute; top: 0px; right:0px;">
-                    <a href="#disqus_thread">отзывы</a>
+                    <a href="#disqus_thread" rel="nofollow">отзывы</a>
                 </div>
+                <!--/noindex-->
             </div>
             <div class="text-box"  style="text-align: center;">
                 <img src="<?php echo $this->product->getPhoto1()->getPath('529:396')?>" alt="" width="529" height="396" />
@@ -91,7 +100,7 @@
                 } ?>
             </div>
         </section>
-        <section style="margin-top: -70px;">
+        <section style="margin-top: -30px;">
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -130,10 +139,9 @@
     </article>
     <aside id="sidebar">
         <?php echo $this->ShowCategorys();?>
-        <?php echo $this->ShowRecomend();?>
         <br/>
         <div class="block">
-            <h3 class="top-title"><span>И ЕЩЕ</span></h3>
+            <h3 class="top-title"><span></span></h3>
             <div class="ad">
                 <div class="box">
                     <script type="text/javascript"><!--

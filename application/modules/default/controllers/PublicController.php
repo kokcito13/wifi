@@ -69,7 +69,7 @@ class PublicController extends Zend_Controller_Action {
             $this->view->keywords = $this->view->categoryContent['keywords']->getFieldText();
             $this->view->description = $this->view->categoryContent['description']->getFieldText();
         }
-        $this->view->publicList = Application_Model_Kernel_Product::getList($order, $orderType, true, true, false, Application_Model_Kernel_Page::STATUS_SHOW, $this->view->pageNum, 20, false, true, $wheres);
+        $this->view->publicList = Application_Model_Kernel_Product::getList($order, $orderType, true, true, false, Application_Model_Kernel_Page::STATUS_SHOW, $this->view->pageNum, Application_Model_Kernel_Product::ITEM_ON_PAGE, false, true, $wheres);
     }
 
 }
