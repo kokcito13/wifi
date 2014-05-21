@@ -81,6 +81,7 @@
                     $contents = explode("</p>", $contentPost);
                     foreach ($contents as $k => $content) {
                         echo $content;
+                        echo (count($contents) == ($k+1) )?"":"</p>";
                         if (isset($arrAdvert[$k + 1]))
                             echo $arrAdvert[$k + 1];
                         if (isset($arrAdvert['prelast'])) {
